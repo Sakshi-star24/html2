@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Keycodes</title>
+		<style type="text/css">
+		body
+		{
+			background:#f6f6f6;
+		}
+		
+		.container{
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translateX(-50%) translateY(-50%);
+			text-align:center;
+			background:#ddd;
+			border: 1px solid #999;
+			padding:15px;
+			box-shadow:0 0 5px 3px #ccc;
+		}
+		
+		.display{
+			font-size:40px;
+		}
+		
+		#list,#list1,#list2,#list3,#list4{
+			font-size:88px;
+			padding:20px;
+			margin-top:20px;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<table class="container">
+			<tr class="display">
+				<td colspan="4" id="code_here">Press any key</td>
+			</tr>
+			<tr class="desc" id="list">
+				<td colspan="2" id="list1">F5</td>
+				<td colspan="2" id="list2">116</td>
+			</tr>
+			<tr>
+				<td colspan="2" id="list3">Pressed Key</td>
+				<td colspan="2" id="list4">Keycode</td>
+			</tr>
+		</table>
+		<script>
+		var code=document.getElementById('code_here');
+		document.addEventListener('keydown',function(event){
+			event.preventDefault();
+			let altKey=event.altKey;
+				metaKey=event.metaKey;
+				shiftKey=event.shiftKey;
+				ctrlKey=event.ctrlKey;
+				var keyPressed=event.which;
+				var keycode=event.keyCode;
+				document.getElementById('list1').innerText=keyPressed;
+				document.getElementById('list2').innerText=keycode;
+		})
+						
+		</script>
+	</body>
+</html>
